@@ -1,11 +1,12 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "ESNext",
-    "sourceMap": true,
-    "outDir": "dist",
-    "moduleResolution": "node"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ESNext",
+		"sourceMap": true,
+		"outDir": "dist",
+		"moduleResolution": "node",
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
 }
