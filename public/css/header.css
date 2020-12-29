@@ -6,36 +6,36 @@ header{
     height: 80px;
     background-color: #2C2C54;
 }
-h1{
+nav h1{
     color: black;
-    float: left;
     width: 500px;
-    margin-top: 14px;
-    margin-left: 170px;
     font-family: 'Gugi', cursive;
     font-weight: 700;
+    margin-top: 16px;
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
     font-size: 43px;
 }
-a{
+nav a{
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
     color: black;
-    list-style-type: none;
+    list-style: none;
     text-decoration: none;
 }
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+}
 
-
-ul{
-    margin-top: 22px;
-    width: 700px;
-    float:right;
+nav ul{
+    display: flex;
     list-style: none;
 }
-li{
+nav ul li{
     font-family: 'Gugi', cursive;
     font-size: 30px;
-    margin-left: 80px;
-    margin-right: 50px;
-    float:left;
+    width: 120px;
+    margin-top: 23px;
+    flex:1;
     font-weight: bold;
 }
