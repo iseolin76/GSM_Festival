@@ -1,29 +1,25 @@
-import * as express from 'express';
-import { config } from 'node-config-ts';
-import * as mongoose from 'mongoose';
+import * as express from "express";
 
 class App {
-	public application: express.Application;
-	constructor() {
-		this.application = express();
-	}
+  public application: express.Application;
+  constructor() {
+    this.application = express();
+  }
 }
 
 const app = new App().application;
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', './public/views');
+app.use(express.static("public"));
+app.engine("html", require("ejs").renderFile);
+app.set("view engine", "html");
+app.set("views", "views");
 
-const connection = mongoose.connect(config.MONGO_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
+app.get("/", (req: express.Request, res: express.Response) => {
+  res.render("index");
 });
-console.log('connect mongodb');
 
-app.get('/', (req: express.Request, res: express.Response) => {
-	res.render('index');
+app.get("/game", (req: express.Request, res: express.Response) => {
+  res.render("Game");
 });
-app.listen(8080, () =>
-	console.log(`Open Server http://127.0.0.1:${config.PORT}`)
-);
+
+app.listen(8080, () => console.log(`Open Server http://127.0.0.1:8080`));
